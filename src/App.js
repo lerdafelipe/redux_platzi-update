@@ -11,8 +11,8 @@ import { getPokemonsWithDetails, setLoading } from './actions';
 
 
 function App() {
-  const pokemons = useSelector(state => state.get('pokemons')).toJS();
-  const loading = useSelector( state => state.get('loading'));
+  const pokemons = useSelector(state => state.getIn(['data', 'pokemons'])).toJS();
+  const loading = useSelector( state => state.getIn(['ui', 'loading']));
   const dispatch = useDispatch();
 
   useEffect(()=>{
